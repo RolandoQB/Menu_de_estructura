@@ -8,9 +8,9 @@ class Pila_1:
         if self.top <self.size:
             self.lista = self.lista + [dato]
             self.top += 1
-            return self.lista
+            return True
         else:
-            return print("La list esta llena")
+            return False
 
     def pop(self):
         if self.empty():
@@ -34,14 +34,12 @@ class Pila_1:
         else:
             return False
         
-
-
-# pila1 = Pila_1(3)
-# print(pila1.push(8))
-# print(pila1.push(10))
-# print(pila1.push(12))
-# print(pila1.push(4))
-# print(pila1.push(4))
-# pila1.show()
-# print(pila1.longitud())
-
+        
+"""pila1 = Pila_1(3)
+print(pila1.push(8))
+print(pila1.push(10))
+print(pila1.push(12))
+print(pila1.push(4))
+print(pila1.push(4))
+pila1.show()
+print(pila1.longitud())"""
