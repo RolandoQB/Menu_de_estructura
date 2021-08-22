@@ -142,7 +142,7 @@ while opc != "4":
 # ______________________________________________________________________________________________________________________
             while opc1 != "8":
                 os.system("cls")
-                men1 = Menu("Menu Operaciones Lista",["1)Append", "2)Obtener", "3)Otener eliminado","4)Buscar", "5)Insertar","6) Eliminar", "7)Mostrar","8)Salir"])
+                men1 = Menu("Menu Operaciones Lista",["1)Append", "2)Obtener", "3)Otener eliminado","4)Buscar", "5)Insertar","6)Eliminar", "7)Mostrar","8)Salir"])
                 opc1 = men1.menu()
 # ______________________________________________________________________________________________________________________
                 if opc1 == "1":
@@ -179,7 +179,14 @@ while opc != "4":
                     if resp ==None:
                         print("Posicion no valida, Verifique la Lista.....")
                     else:
-                        print("El elemento de la posicion: {} es: {}".format(posicion,resp))
+                        for pos,ele in enumerate(resp):
+                            # se guarda el valor eliminado del return
+                            if pos==0:
+                                num=ele
+                            # se guarda la lista del return
+                            elif pos==1:
+                                num2=ele
+                        print("El elemento de la posicion: {} es: {} , su nueva lista es:{}".format(posicion,num,num2))
                         
                     input("Presione una tecla para continuar...")
                     
@@ -209,12 +216,23 @@ while opc != "4":
                         else:
                             print("Lista llena")
                     input("Presione una tecla para continuar...") 
-                    
+# ______________________________________________________________________________________________________________________                      
                 elif opc1 == "6":
                     os.system("cls")
                     print("<---Eliminar--->")
-                    dato = input(" Digite su dato a ingresar:")
-                    resultados.eliminar()
+                    dato = input(" Digite su dato a Eliminar:")
+                    res= resultados.eliminar(dato)
+                    if res== None:
+                        print("Su dato ingresado no esta en la Lista, No se puede eliminar.")
+                    else:
+                        for pos,ele in enumerate(res):
+                            # se guarda el valor eliminado del return
+                            if pos==0:
+                                num=ele
+                            # se guarda la lista del return
+                            elif pos==1:
+                                num2=ele
+                        print("Su Dato:{} se eliminó, Su nueva Lista es:{}".format(num,num2))
                     
                     input("Presione una tecla para continuar...") 
                     
